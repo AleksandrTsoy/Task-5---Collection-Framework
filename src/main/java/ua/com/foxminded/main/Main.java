@@ -1,7 +1,12 @@
 package ua.com.foxminded.main;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.function.Function;
+
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 public class Main {
     private static final String STOP = "stop";

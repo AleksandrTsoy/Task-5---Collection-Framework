@@ -4,10 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-import java.util.function.Function;
 
-import static java.util.stream.Collectors.counting;
-import static java.util.stream.Collectors.groupingBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -17,15 +14,12 @@ class UniqueCharCounterTest {
     private UniqueCharCounter charCounter;
 
     Map<Character, Long> prepareTestUniqueCharCounter() {
-        List<Character> result = new ArrayList<>();
-        result.add('H');
-        result.add('e');
-        result.add('l');
-        result.add('l');
-        result.add('o');
-        Map<Character, Long> counted = result.stream()
-                .collect(groupingBy(Function.identity(), LinkedHashMap::new, counting()));
-        return counted;
+        Map<Character, Long> map = new LinkedHashMap<>();
+        map.putIfAbsent('H', 1L);
+        map.putIfAbsent('e', 1L);
+        map.putIfAbsent('l', 2L);
+        map.putIfAbsent('o', 1L);
+        return map;
     }
 
     @BeforeEach
