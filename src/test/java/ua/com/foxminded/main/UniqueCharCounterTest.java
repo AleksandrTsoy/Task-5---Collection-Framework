@@ -15,10 +15,10 @@ class UniqueCharCounterTest {
 
     Map<Character, Long> prepareTestUniqueCharCounter() {
         Map<Character, Long> map = new LinkedHashMap<>();
-        map.putIfAbsent('H', 1L);
-        map.putIfAbsent('e', 1L);
-        map.putIfAbsent('l', 2L);
-        map.putIfAbsent('o', 1L);
+        map.put('H', 1L);
+        map.put('e', 1L);
+        map.put('l', 2L);
+        map.put('o', 1L);
         return map;
     }
 
